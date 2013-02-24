@@ -10,6 +10,7 @@
   [%- end %]
 <title>[% page_title _ ' | ' _ product.type _ ' ' _ product.vendor | html %]</title>
 <meta name="description" content="[% product.type | html %] [% product.vendor | html %] - [% product.name | html %] - [% product_variants.remove('^(, )') %]" />
+<link rel="image_src" href="[% product.featured_image.src | image_uri if product.featured_image.src %]" />
 [%- case 'collection.tt' %]
 <title>[% page_title %] | [% shop.domain if !current_type && !current_vendor %][% ' ' _ current_type | html if current_type %][% ' ' _ current_vendor | html if current_vendor %]</title>
 [%- if collection.content %]
